@@ -98,6 +98,14 @@ div.field-email i[class="fab fa-mailchimp"] {
     opacity: 1;
 }
 
+div i[class="fas fa-arrow-circle-down"]:hover {
+    color: rgb(80, 80, 80);
+}
+
+div i[class="fas fa-arrow-circle-down"]:active {
+    transform: scale(0.9,0.9);
+}
+
 
 
 @keyframes shake {
