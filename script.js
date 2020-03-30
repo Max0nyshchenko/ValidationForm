@@ -1,32 +1,7 @@
 function animatedForm(){
     const arrows = document.querySelectorAll('.fa-arrow-circle-down');
 
-    arrows.forEach(arrow => {
-        document.addEventListener('keydown', function (e) {
-            if(e.keyCode == 13) {
-                const input = arrow.previousElementSibling;
-                const parent = arrow.parentElement;
-                const nextForm = parent.nextElementSibling;
-
-                // Check for validation
-
-                if (input.type === 'text' && validateUser(input)) {
-                    nextSlide(parent, nextForm);
-                } else if (input.type === 'email' && validateEmail(input)) {
-                    nextSlide(parent, nextForm);
-                } else if (input.type === 'password' && validatePassword(input)) {
-                    nextSlide(parent, nextForm);
-                } else {
-                    parent.style.animation = 'shake 0.5s ease';
-                    errorMSG.style.animation = 'shake1 0.5s ease';
-                }
-                parent.addEventListener('animationend', () => {
-                    parent.style.animation = '';
-                    errorMSG.style.animation = '';
-                })
-            }
-        })
-    })
+    
 
     arrows.forEach(arrow => {
         arrow.addEventListener('click', function(){
