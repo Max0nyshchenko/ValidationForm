@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Average+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Form</title>
+</head>
+<body>
+    <form>
+        <div class="error-message">
+            <p id="error"></p>
+        </div>
+        <div class="field-name active">
+            <i class="fas fa-user-circle"></i>
+            <input type="text" placeholder="Username" required>
+            <i class="fas fa-arrow-circle-down"></i>
+        </div>
+        <div class="field-email innactive">
+            <i class="fab fa-mailchimp"></i>
+            <input type="email"  placeholder="Email" required>
+            <i class="fas fa-arrow-circle-down"></i>
+        </div>
+        <div class="field-password innactive">
+            <i class="fas fa-key"></i>
+            <input type="password" placeholder="Password" required>
+            <i class="fas fa-arrow-circle-down"></i>
+        </div>
+        <div class="field-finish innactive">
+            <i class="fas fa-heart"></i>
+            <p>Thank you!</p>
+            <i class="fas fa-heart"></i>
+        </div>
+    </form>
+</body>
+<script src="https://kit.fontawesome.com/39d2f8a68c.js" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</html>
