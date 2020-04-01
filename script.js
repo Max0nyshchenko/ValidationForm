@@ -1,8 +1,6 @@
 function animatedForm(){
     const arrows = document.querySelectorAll('.fa-arrow-circle-down');
 
-    
-
     arrows.forEach(arrow => {
         arrow.addEventListener('click', function(){
             const input = arrow.previousElementSibling;
@@ -31,6 +29,7 @@ function animatedForm(){
 
 
 
+
 const errorMSG = document.getElementById('error');
 const error_message = document.querySelector('.error-message');
 
@@ -39,6 +38,7 @@ function nextSlide(parent, nextForm){
     parent.classList.remove('active');
     nextForm.classList.add('active');
     errorMSG.innerText = '';
+    error_message.classList.remove('error-active');
 }
 
 
@@ -85,3 +85,49 @@ function error(color){
 
 
 animatedForm();
+let counter = 0;
+document.addEventListener('keydown', (e)=>{
+    if(e.keyCode == 13){
+        const array = document.querySelectorAll('.fa-arrow-circle-down');
+
+        
+        function validationCheck(){
+            const input = array[counter].previousElementSibling;
+            const parent = array[counter].parentElement;
+            const nextForm = parent.nextElementSibling;
+
+            if (input.type === 'text' && validateUser(input)) {
+                nextSlide(parent, nextForm);
+                if (counter < array.length) {
+                    counter++
+                } else {
+                    counter = 0;
+                }
+            } else if (input.type === 'email' && validateEmail(input)) {
+                nextSlide(parent, nextForm);
+                if (counter < array.length) {
+                    counter++
+                } else {
+                    counter = 0;
+                }
+            } else if (input.type === 'password' && validatePassword(input)) {
+                nextSlide(parent, nextForm);
+                if (counter < array.length) {
+                    counter++
+                } else {
+                    counter = 0;
+                }
+            } else {
+                parent.style.animation = 'shake 0.5s ease';
+                errorMSG.style.animation = 'shake1 0.5s ease';
+            }
+            parent.addEventListener('animationend', () => {
+                parent.style.animation = '';
+                errorMSG.style.animation = '';
+            })
+            
+        }
+
+        validationCheck();
+    }
+})

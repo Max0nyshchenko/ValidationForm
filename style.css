@@ -84,7 +84,7 @@ div.field-email i[class="fab fa-mailchimp"] {
     transform: translate(-50%, -50%);
     border-radius: 5px;
     opacity: 0;
-    transition: all 5.5s ease;
+    transition: opacity 5.5s ease;
 }
 
 #error {
